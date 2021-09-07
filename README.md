@@ -49,8 +49,11 @@ Rel(ProxyService, PrimeNumberServer, "Asks for a sequence of prime numbers up to
 title Sequence Diagram: Prime numbers
 
 user->proxyService: asks for a sequence of prime numbers up to a given number
-proxyService->primeNumberServer: asks for a sequence of prime numbers up to a given number
+alt #pink the number is not positive 
+proxyService-->user: return an error
+end
+proxyService->primeNumberServer: asks for a sequence of prime numbers up to the given number
 primeNumberServer->primeNumberServer: calculates prime numbers
-primeNumberServer-->proxyService: return prime numbers up the given numbers
-proxyService-->user: sequence of prime numbers up to a given number
+primeNumberServer-->proxyService: return prime numbers up to the given number
+proxyService-->user: return the sequence of prime numbers up to the given number
 ```
