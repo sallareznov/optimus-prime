@@ -12,4 +12,9 @@
 
 ### Component diagram
 
-![Component diagram](http://www.plantuml.com/plantuml/png/5Sqz3i8m343XdLF00HhlJBsAIQpMKcn7_W69qrEcjppfsoFHisJU7gnzrg3oUJypLpm173_ju3phLK7UJPCqMpU1m3dHwQls1bl9Kh4jPo4GP8LX7QvjcPBcDXWFHsdhx-oau-eF)
+TODO
+
+### Sequence diagram
+
+![Prime numbers](http://www.plantuml.com/plantuml/png/5Sqz3i8m343XdLF00HhlJBsAIQpMKcn7_W69qrEcjppfsoFHisJU7gnzrg3oUJypLpm173_ju3phLK7UJPCqMpU1m3dHwQls1bl9Kh4jPo4GP8LX7QvjcPBcDXWFHsdhx-oau-eF)
+
