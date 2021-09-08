@@ -1,3 +1,6 @@
+import DependenciesScopes._
+import Dependencies._
+
 inThisBuild {
   List(
     isSnapshot                := true,
@@ -16,4 +19,10 @@ inThisBuild {
   )
 }
 
-lazy val optimusPrime = Project(id = "optimus-prime", base = file("."))
+libraryDependencies ++=
+  compileDependencies(
+    refined,
+    zioStreams
+  )
+
+libraryDependencies ++= testDependencies(scalatest)
