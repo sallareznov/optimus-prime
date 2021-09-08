@@ -1,12 +1,31 @@
 @startuml
-title Sequence Diagram: Prime numbers
+!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/v1.0.0/C4.puml
+!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/v1.0.0/C4_Context.puml
+!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/v1.0.0/C4_Container.puml
+!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/v1.0.0/C4_Component.puml
 
-user->proxyService: asks for a sequence of prime numbers up to a given number
-alt #pink the number is not positive
-proxyService-->user: return an error
-end
-proxyService->primeNumberServer: asks for a sequence of prime numbers up to the given number
-primeNumberServer->primeNumberServer: calculates prime numbers
-primeNumberServer-->proxyService: return prime numbers up to the given number
-proxyService-->user: return the sequence of prime numbers up to the given number
+title Component Diagram
+
+Container_Boundary(optimusPrime, "Optimus Prime") {
+    Component(proxyServiceDomain, "proxy-service/domain", "scala DSL")
+    Component(proxyServiceHttpServer, "proxy-service/http-server", "http4s + tapir", "exposes REST endpoints")
+    Component(proxyServiceGRPCClient, "proxy-service/grpc-server", "zio grpc + protobuf")
+    Component(primeNumberServerDomain, "prime-number-server/domain", "scala DSL")
+    Component(primeNumberGRPCServer, "prime-number-server/grpc-server", "zio grpc + protobuf")
+}
+
+Rel(proxyServiceHttpServer, proxyServiceDomain, "Uses")
+Rel(primeNumberGRPCServer, primeNumberServerDomain, "Uses")
+Rel(httpClient, domain, "Implements")
+Rel(formatter, domain, "Implements")
+Rel(spreadsheet, domain, "Implements")
+Rel(fileStorage, domain, "Implements")
+
+Rel(app, httpServer, "Wires")
+Rel(app, httpClient, "Wires")
+Rel(app, formatter, "Wires")
+Rel(app, fileStorage, "Wires")
+Rel(app, spreadsheet, "Wires")
+
+
 @enduml
