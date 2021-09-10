@@ -16,5 +16,5 @@
 
 ### Sequence diagram
 
-![Prime numbers](http://www.plantuml.com/plantuml/png/5Sqz3i8m343XdLF00HhlJBsAIQpMKcn7_W69qrEcjppfsoFHisJU7gnzrg3oUJypLpm173_ju3phLK7UJPCqMpU1m3dHwQls1bl9Kh4jPo4GP8LX7QvjcPBcDXWFHsdhx-oau-eF)
+![Prime numbers](http://www.plantuml.com/plantuml/png/5Ssx3G8n303GdYbWW8jxgbl59DQTfTWE_e34z43rohT7ecV9lDnO-wn1vVDwPgwu0pY-sy5vrgE2l9icQRPk0e5pejD7xGMsagLYMyv28CWAmpe4FOkqqpOO3qTfwz_ifEFd5m00)
 
