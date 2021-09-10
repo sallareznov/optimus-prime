@@ -1,0 +1,16 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{ISO8601} %-5level [%X{sourceThread}] %logger{20} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.optimus" level="DEBUG" />
+    <logger name="org.http4s.server.middleware" level="DEBUG" />
+
+    <root level="WARN">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>
