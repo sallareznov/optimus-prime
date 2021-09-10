@@ -7,25 +7,15 @@
 title Component Diagram
 
 Container_Boundary(optimusPrime, "Optimus Prime") {
-    Component(proxyServiceDomain, "proxy-service/domain", "scala DSL")
-    Component(proxyServiceHttpServer, "proxy-service/http-server", "http4s + tapir", "exposes REST endpoints")
-    Component(proxyServiceGRPCClient, "proxy-service/grpc-server", "zio grpc + protobuf")
-    Component(primeNumberServerDomain, "prime-number-server/domain", "scala DSL")
-    Component(primeNumberGRPCServer, "prime-number-server/grpc-server", "zio grpc + protobuf")
+    Component(contracts, "contracts", "protobuf")
+    Component(proxyService, "proxy-service", "scala DSL + http4s + tapir")
+    Component(primeNumberServer, "prime-number-server", "scala DSL + zio-grpc")
+    Component(behaviour, "behaviour", "scala DSL + cucumber")
 }
 
-Rel(proxyServiceHttpServer, proxyServiceDomain, "Uses")
-Rel(primeNumberGRPCServer, primeNumberServerDomain, "Uses")
-Rel(httpClient, domain, "Implements")
-Rel(formatter, domain, "Implements")
-Rel(spreadsheet, domain, "Implements")
-Rel(fileStorage, domain, "Implements")
-
-Rel(app, httpServer, "Wires")
-Rel(app, httpClient, "Wires")
-Rel(app, formatter, "Wires")
-Rel(app, fileStorage, "Wires")
-Rel(app, spreadsheet, "Wires")
-
+Rel(proxyService, contracts, "Implements")
+Rel(primeNumberServer, contracts, "Implements")
+Rel(behaviour, proxyService, "Uses")
+Rel(behaviour, primeNumberServer, "Uses")
 
 @enduml
