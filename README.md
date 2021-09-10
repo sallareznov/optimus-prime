@@ -12,7 +12,7 @@
 
 ### Component diagram
 
-![Component diagram](http://www.plantuml.com/plantuml/png/5Sqz3i8m343XdLF00HhlJBsAIQpMKcn7_W69qrEcjppfsoFHisJU7gnzrg3oUJypLpm173_ju3phLK7UJPCqMpU1m3dHwQls1bl9Kh4jPo4GP8LX7QvjcPBcDXWFHsdhx-oau-eF)
+![Component diagram](http://www.plantuml.com/plantuml/png/5Sqz3i8m343XdLF00HhlJBsAIQpMKcn7_W69qrEcjppfsoFHisJU7gnzrg3oUJypLpm173_ju3phLK7UJPCqMpU1m3dHwQls1bl9Kh4jPo4GP8LX7QvjcP9cR8FnS9Is_j1EEgx-0000)
 
 ### Sequence diagram
 
