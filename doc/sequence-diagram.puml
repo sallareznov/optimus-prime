@@ -2,7 +2,7 @@
 title Sequence Diagram: Prime numbers
 
 user->proxyService: asks for a sequence of prime numbers up to a given number
-alt #pink the number is not positive
+alt #pink the input is not a number or is not greater than 1
 proxyService-->user: return an error
 end
 proxyService->primeNumberServer: asks for a sequence of prime numbers up to the given number
