@@ -70,7 +70,14 @@ At the root of the project:
 The HTTP server acting as a proxy runs on port `8080`, so one can execute a
 `GET` request at `http://localhost:8080/prime/17`.
 
+You can also use the Swagger UI to perform some requests: `http://localhost:8080/docs`.
+
 ### How to run tests
 
 - unit tests can be run with the command `sbt test`
 - behaviour tests can be run with the command `sbt behaviour/cucumber`
+
+## How to improve it
+
+- improve logging and add tracing [mandatory before going into production, as it eases debugging and monitoring] (maybe with [zio-telemetry](https://zio.github.io/zio-telemetry/))
+- implement a test that illustrates the wanted behaviour when the `prime-number-server` is unavailable
